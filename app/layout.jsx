@@ -1,6 +1,7 @@
 import "../styles/globals.css"
 import Nav from "@components/Nav"
 import Provider from "@components/Provider"
+import { Suspense } from "react"
 
 
 export const metadata = {
@@ -18,7 +19,9 @@ const Rootlayout = ({children}) => {
             </div>
             <main className="app">
                 <Nav />
-                {children}
+                <Suspense>
+                    {children}
+                </Suspense>
             </main>
             </Provider>
         </body>
